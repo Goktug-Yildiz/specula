@@ -35,7 +35,7 @@
                 z-index: -1;
             }
             /* Added a container for the content */
-          .container {
+        .container {
                 max-width: 1200px;
                 margin: 0 auto;
                 padding: 20px;
@@ -46,12 +46,12 @@
                 margin-bottom: 20px;
             }
             /* Added styles for the navigation bar */
-           .navbar {
+        .navbar {
                 display: flex;
                 justify-content: center;
                 margin: 20px 0;
             }
-           .navbar a {
+        .navbar a {
                 display: block;
                 padding: 10px 20px;
                 margin: 0 10px;
@@ -61,21 +61,151 @@
                 color: white;
                 transition: background-color 0.3s ease;
             }
-           .navbar a:hover {
+        .navbar a:hover {
                 background-color: rgba(255, 255, 255, 0.2);
             }
+            /* Added styles for the contact section */
+            #contact {
+                margin-top: 50px;
+                text-align: left;
+                padding: 20px;
+                background-color: black;
+                border-radius: 5px;
+            }
+            #contact h2 {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            #contact label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            #contact input,
+            #contact textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: none;
+                border-radius: 5px;
+                background-color: rgba(255, 255, 255, 0.1);
+                color: white;
+            }
+            #contact button {
+                background-color: rgba(255, 255, 255, 0.1);
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            #contact button:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            #contact-box {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: left;
+}
+
+#contact-box h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#contact-box label {
+    display: inline-block;
+    width: 20%;
+    margin-right: 10px;
+    text-align: right;
+    vertical-align: top;
+}
+
+#contact-box input,
+#contact-box textarea {
+    display: inline-block;
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    vertical-align: top;
+}
+
+#contact-box button {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#contact-box button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
         </style>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var nameInput = document.getElementById('name');
+        var emailInput = document.getElementById('email');
+        var messageInput = document.getElementById('message');
+        var formData = 'Name: ' + nameInput.value + ' ' + 'Email: ' + emailInput.value +' '+ 'Message: ' + messageInput.value;
+        fetch("https://discord.com/api/webhooks/1242922933798567996/f3utr4S2_Jp4630XmpnigayVJ4Vmn80wBSsJ8ocacH3x4Rf0CyzRhXNfVlCcTLb-bs85", {
+     body: JSON.stringify({
+        content: formData,
+        }),
+        headers: {
+            "Content-Type": "application/json",
+        },
+         method: "POST",
+        })
+         .then(function (res) {
+         console.log(res);
+         })
+        .catch(function (res) {
+            console.log(res);
+        });
+          });
+        });
+        </script>
     </head>
     <body>
         <div class="container">
             <h1>About Specula</h1>
             <nav class="navbar">
-                <a href="#">Home</a>
-                <a href="#">Products</a>
-                <a href="#">Contact</a>
+                <a href="https://goktug-yildiz.github.io/specula/">Home</a>
+                <a href="https://goktug-yildiz.github.io/specula-product/">Products</a>
+                <a href="#contact">Contact</a>
             </nav>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
-            <p>Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.</p>
-        </div>
-    </body>
-</html>
+            <div id="contact-box">
+                <h2>Contact Us</h2>
+                <form action="https://formspree.io/your-email@example.com" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="_replyto" required>
+            
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+            
+                    <button type="submit">Send</button>
+                </form>
+            </div>
