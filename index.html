@@ -178,6 +178,14 @@ document.addEventListener('DOMContentLoaded', function() {
         },
          method: "POST",
         })
+        .then(response => {
+            if (response.ok) {
+                alert('Message sent successfully!');
+                form.reset();
+            } else {
+                alert('Error sending message. Please try again later.');
+            }
+        })
          .then(function (res) {
          console.log(res);
          })
