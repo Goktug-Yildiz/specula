@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Specula</title>
+        <style>
+            /* Added CSS styles */
+            body {
+                background-color: rgb(91, 78, 122); /* A dark blue-purple background */
+                color: white; /* White text color */
+                font-family: Arial, sans-serif; /* Arial font with sans-serif fallback */
+                text-align: center; /* Center-aligned text */
+                line-height: 1.6; /* Improved line height */
+                margin: 0; /* Removed default margin */
+                padding: 0; /* Removed default padding */
+            }
+            h1 {
+                display: block; /* Display as a block element */
+                margin: 20px auto; /* Add some margin to the top and bottom */
+                font-size: 36px; /* Increase font size for the heading */
+                font-weight: bold; /* Make the heading bold */
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+                padding: 0 20px; /* Added padding for better readability */
+            }
+            /* Add a gradient effect to the background */
+            body::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom, rgba(91, 78, 122, 0.5), rgba(91, 78, 122, 1));
+                z-index: -1;
+            }
+            /* Added a container for the content */
+          .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            /* Added styles for the paragraphs */
+            p {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+            /* Added styles for the navigation bar */
+           .navbar {
+                display: flex;
+                justify-content: center;
+                margin: 20px 0;
+            }
+           .navbar a {
+                display: block;
+                padding: 10px 20px;
+                margin: 0 10px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 5px;
+                text-decoration: none;
+                color: white;
+                transition: background-color 0.3s ease;
+            }
+           .navbar a:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>About Specula</h1>
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Contact</a>
+            </nav>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+            <p>Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.</p>
+        </div>
+    </body>
+</html>
