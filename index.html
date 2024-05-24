@@ -291,25 +291,6 @@ header img {
 });
         </script>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-    var languageSelector = document.getElementById('language');
-    languageSelector.addEventListener('change', function() {
-        var language = languageSelector.value;
-        if (language === 'tr') {
-            // Update the cookie popup content with Turkish text
-            document.querySelector('#cookie-popup p').textContent = 'Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.';
-            document.querySelector('#cookie-popup button[type="submit"]').textContent = 'Kabul Et';
-            document.querySelector('#cookie-popup button[type="button"]').textContent = 'Reddet';
-        } else if (language === 'en') {
-            // Update the cookie popup content with English text
-            document.querySelector('#cookie-popup p').textContent = 'This website uses cookies to ensure you get the best experience on our website. By continuing to browse the site, you are agreeing to our use of cookies.';
-            document.querySelector('#cookie-popup button[type="submit"]').textContent = 'Accept';
-            document.querySelector('#cookie-popup button[type="button"]').textContent = 'Decline';
-        }
-    });
-});
-        </script>
-        <script>
 document.addEventListener('DOMContentLoaded', function() {
     var cookiePopup = document.getElementById('cookie-popup');
     var cookieButton = document.getElementById('cookie-button');
@@ -340,36 +321,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return cookie.startsWith('cookieAccepted=');
     }) ){
         cookiePopup.style.display = 'block';
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    var cookiePopup = document.getElementById('cookie-popup');
-    var cookieButton = document.getElementById('cookie-button');
-    var declineButton = document.getElementById('decline-button');
-    cookieButton.addEventListener('click', function() {
-        cookiePopup.classList.add('fade-away');
-        setTimeout(function() {
-            cookiePopup.style.display = 'none';
-        }, 300);
-        document.cookie = 'cookieAccepted=true; max-age=31536000; path=/';
-    });
-    declineButton.addEventListener('click', function() {
-        cookiePopup.classList.add('fade-away');
-        setTimeout(function() {
-            cookiePopup.style.display = 'none';
-        }, 300);
-        document.cookie = 'cookieDeclined=true; max-age=31536000; path=/';
-    });
-    if (!document.cookie.split('; ').find(function(cookie) {
-        return cookie.startsWith('cookieAccepted=');
-    }) ){
-        cookiePopup.style.display = 'block';
-    }
-    if (document.cookie.split('; ').find(function(cookie) {
-        return cookie.startsWith('cookieDeclined=');
-    }) ){
-        cookiePopup.style.display = 'none';
     }
 });
             
