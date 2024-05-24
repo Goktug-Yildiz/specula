@@ -291,6 +291,25 @@ header img {
 });
         </script>
         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    var languageSelector = document.getElementById('language');
+    languageSelector.addEventListener('change', function() {
+        var language = languageSelector.value;
+        if (language === 'tr') {
+            // Update the cookie popup content with Turkish text
+            document.querySelector('#cookie-popup p').textContent = 'Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.';
+            document.querySelector('#cookie-popup button[type="submit"]').textContent = 'Kabul Et';
+            document.querySelector('#cookie-popup button[type="button"]').textContent = 'Reddet';
+        } else if (language === 'en') {
+            // Update the cookie popup content with English text
+            document.querySelector('#cookie-popup p').textContent = 'This website uses cookies to ensure you get the best experience on our website. By continuing to browse the site, you are agreeing to our use of cookies.';
+            document.querySelector('#cookie-popup button[type="submit"]').textContent = 'Accept';
+            document.querySelector('#cookie-popup button[type="button"]').textContent = 'Decline';
+        }
+    });
+});
+        </script>
+        <script>
 document.addEventListener('DOMContentLoaded', function() {
     var cookiePopup = document.getElementById('cookie-popup');
     var cookieButton = document.getElementById('cookie-button');
@@ -363,7 +382,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('h1').textContent = 'Hakkında Specula';
             document.querySelector('p').textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.';
             document.querySelector('a[href="https://goktug-yildiz.github.io/specula/"]').textContent = 'Ana Sayfa';
-            document.querySelector('a[href="https://goktug-yildiz.github.io/specula-product/"]').textContent = 'Ürünler';
+            document.querySelector('a[href="https://goktug-yildiz.github.io/specula-product/"]').textContent = 'Ürünümüz';
             document.querySelector('a[href="#contact-box"]').textContent = 'İletişim';
             // Update the contact box content with Turkish text
             document.querySelector('#contact-box h2').textContent = 'Bizimle İletişime Geç';
@@ -376,7 +395,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('h1').textContent = 'About Specula';
             document.querySelector('p').textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.';
             document.querySelector('a[href="https://goktug-yildiz.github.io/specula/"]').textContent = 'Home';
-            document.querySelector('a[href="https://goktug-yildiz.github.io/specula-product/"]').textContent = 'Products';
+            document.querySelector('a[href="https://goktug-yildiz.github.io/specula-product/"]').textContent = 'Product';
             document.querySelector('a[href="#contact-box"]').textContent = 'Contact';
             // Update the contact box content with English text
             document.querySelector('#contact-box h2').textContent = 'Contact Us';
@@ -439,9 +458,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
             <h1>Speculo Hakkında</h1>
             <nav class="navbar">
-                <a href="https://goktug-yildiz.github.io/specula/">Home</a>
-                <a href="https://goktug-yildiz.github.io/specula-product/">Products</a>
-                <a href="#contact-box">Contact</a>
+                <a href="https://goktug-yildiz.github.io/specula/">Ana Sayfa</a>
+                <a href="https://goktug-yildiz.github.io/specula-product/">Ürünümüz</a>
+                <a href="#contact-box">İletişim</a>
             </nav>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
             <div id="contact-box">
