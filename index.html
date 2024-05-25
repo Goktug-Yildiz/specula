@@ -376,7 +376,7 @@ footer {
             </div>
             <div id="product-sale">
                 <h2 id="product-header">Satın alın!</h2>
-                <p id="product-text">Our product is designed with engineering and biology students to</p>
+                <p id="product-text"></p>
                 <img src="https://cdn.discordapp.com/attachments/1243857945196761150/1243986174545235968/speculo-tp.png?ex=665377e8&is=66522668&hm=1cdff7f7bdc44b5130343972ab8f4b35114d710239163a99e5c995d5ea215275&" alt="Product Image" id="product-image">
                 <button id="product-button">Satın Al</button>
                 <p id="out-of-stock">Hala yapım aşamasında</p>
@@ -714,6 +714,23 @@ declineButton.addEventListener('click', () => {
             document.querySelector('#product-text').textContent = 'Our product is designed with engineering and biology students to';
             document.querySelector('#product-button').textContent = 'Buy Now';
             document.querySelector('#out-of-stock').textContent = 'Still in production';
+        }
+        setTimeout(() => {
+        document.body.classList.remove('fade-away');
+    }, 500);
+    });
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var rights = document.querySelector("#footer-content p")
+    var languageSelector = document.getElementById('language');
+    languageSelector.addEventListener('change', function() {
+        var language = languageSelector.value;
+        if (language === 'tr') {
+            rights.textContent = "Tüm hakları saklıdır © 2024"
+        } else if (language === 'en') {
+            rights.textContent = "All rights reserved © 2024"
         }
         setTimeout(() => {
         document.body.classList.remove('fade-away');
