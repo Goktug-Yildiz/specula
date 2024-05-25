@@ -9,418 +9,278 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Main Page - Speculo</title>
         <style>
-            /* Added CSS styles */
-            .navbar a {
-    display: block;
-    padding: 10px 15px;
-    margin: 0 5px 5px 0;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-}
-
-            #product-sale {
-    background-image: linear-gradient(to bottom, #604799, #251855);
-    color: white;
-    padding: 2rem;
-}
-            header {
-    background-image: linear-gradient(to bottom, #858585, #cdc9dd);
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-body {
-    background-image: linear-gradient(to bottom, #604799,#251855);
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    line-height: 1.6;
+/* Genel stil ayarları */
+* {
     margin: 0;
     padding: 0;
-}
-            body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        main {
-            padding: 2rem;
-        }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        p {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            margin-bottom: 1rem;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        @media (max-width: 600px) {
-            main {
-                padding: 1rem;
-            }
-            h1 {
-                font-size: 1.5rem;
-            }
-            p {
-                font-size: 1rem;
-            }
-        }
-            body {
-                background-color: rgb(0, 0, 128); /* A dark blue-purple background */
-                color: white; /* White text color */    
-                font-family: Arial, sans-serif; /* Arial font with sans-serif fallback */
-                text-align: center; /* Center-aligned text */
-                line-height: 1.6; /* Improved line height */
-                margin: 0; /* Removed default margin */
-                padding: 0; /* Removed default padding */
-            }
-            h1 {
-                display: block; /* Display as a block element */
-                margin: 20px auto; /* Add some margin to the top and bottom */
-                font-size: 36px; /* Increase font size for the heading */
-                font-weight: bold; /* Make the heading bold */
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
-                padding: 0 20px; /* Added padding for better readability */
-            }
-            /* Add a gradient effect to the background */
-            body::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(to bottom, rgba(91, 78, 122, 0.5), rgba(91, 78, 122, 1));
-                z-index: -1;
-            }
-            /* Added a container for the content */
-        .container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-            /* Added styles for the paragraphs */
-            p {
-                font-size: 18px;
-                margin-bottom: 20px;
-            }
-            /* Added styles for the navigation bar */
-        .navbar {
-                display: flex;
-                justify-content: center;
-                margin: 20px 0;
-            }
-        .navbar a {
-                display: block;
-                padding: 10px 20px;
-                margin: 0 10px;
-                background-color: rgba(255, 255, 255, 0.1);
-                border-radius: 5px;
-                text-decoration: none;
-                color: white;
-                transition: background-color 0.3s ease;
-            }
-        .navbar a:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-            /* Added styles for the contact section */
-            #contact {
-                margin-top: 50px;
-                text-align: left;
-                padding: 20px;
-                background-color: rgb(0, 0, 128);
-                border-radius: 5px;
-            }
-            #contact h2 {
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 20px;
-            }
-            #contact label {
-                display: block;
-                margin-bottom: 5px;
-            }
-            #contact input,
-            #contact textarea {
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 20px;
-                border: none;
-                border-radius: 5px;
-                background-color: rgba(255, 255, 255, 0.1);
-                color: white;
-            }
-            #contact button {
-                background-color: rgba(255, 255, 255, 0.1);
-                border: none;
-                border-radius: 5px;
-                padding: 10px 20px;
-                color: white;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
-            #contact button:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-            #contact-box {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 50px;
-    text-align: left;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-#contact-box h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-#contact-box label {
-    display: inline-block;
-    width: 20%;
-    margin-right: 10px;
-    text-align: right;
-    vertical-align: top;
-}
-
-#contact-box input,
-#contact-box textarea {
-    display: inline-block;
-    width: 70%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    vertical-align: top;
-}
-
-#contact-box button {
-    display: block;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-}
-
-#contact-box button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-#contact-box {
-    margin-top: 10vh;
-}
 html {
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
 }
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Başlık stil ayarları */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
-    background-color: rgb(41, 41, 138); /* A dark blue-purple background */
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-bottom: 1px solid #333;
 }
 
 header img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-#language-selector {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    max-width: 150px;
+    height: auto;
 }
 
-#language-selector label {
+/* Çerez popup stil ayarları */
+#cookie-popup {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
+
+#cookie-popup p {
     margin-right: 10px;
 }
 
-#language-selector select {
-    padding: 5px;
-    border-radius: 5px;
-}
-#message {
-    height: 200px;
-}
-#cookie-popup {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    border-top-right-radius: 5px;
-}
-
-#cookie-popup button {
-    display: block;
-    background-color: rgba(255, 255, 255, 0.1);
+#cookie-button, #decline-button {
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
-    color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 20px;
 }
 
-#cookie-popup button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+#cookie-button {
+    background-color: #4caf50;
+    color: #fff;
 }
+
+#cookie-button:hover {
+    background-color: #45a049;
+}
+
 #decline-button {
-    display: block;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+    background-color: #f44336;
+    color: #fff;
 }
 
 #decline-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-#cookie-popup {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    border-top-right-radius: 5px;
-    transition: opacity 0.3s ease;
+    background-color: #e53935;
 }
 
-#cookie-popup.fade-away {
-    opacity: 0;
-}
-
-#cookie-popup button {
-    display: inline-block;
-    margin-right: 10px;
-}
-#product-button {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-radius: 5px;
-    padding: 15px 30px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-    font-size: 18px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-#product-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-#product-image {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
-#out-of-stock {
-    text-align: center;
-    color: red;
-    margin-top: 20px;
-}
-#product-button:disabled {
-    pointer-events: none;
-    opacity: 0.5;
-}
-#product-button:hover {
-    cursor: not-allowed;
-}
-#product-image {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
+/* Dil seçici stil ayarları */
 #language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    background-color: #1f1f1f;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 #language-selector label {
-    display: inline-block;
     margin-right: 10px;
-    font-size: 20px;
+    color: #e0e0e0;
     font-weight: bold;
 }
 
 #language-selector select {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 20px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
-}
-
-#language-selector select::-ms-expand {
-    display: none;
-}
-
-#language-selector button {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     padding: 5px 10px;
-    font-size: 20px;
+    background-color: #333;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#language-selector select:hover {
+    background-color: #444;
+}
+
+/* Navigasyon menüsü stil ayarları */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #1f1f1f;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.navbar a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Başlık bölümü stil ayarları */
+#baslik {
+    text-align: center;
+    margin: 40px 0;
+}
+
+#baslik h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+/* Bilgi bölümü stil ayarları */
+#information {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+#information p {
+    font-size: 1.1rem;
+}
+
+/* Amacımız bölümü stil ayarları */
+#amac {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+#amac h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#amac p {
+    font-size: 1.1rem;
+}
+
+/* Ürün satış bölümü stil ayarları */
+#product-sale {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#product-sale h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#product-sale img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+#product-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: not-allowed;
+    margin: 20px 0;
+    transition: background-color 0.3s ease;
+    pointer-events: none;
+}
+
+#product-button:hover {
+    background-color: #007bff; /* Hover durumunda renk değişmeyecek */
+}
+
+#out-of-stock {
+    color: #ff5722;
+    font-weight: bold;
+}
+
+/* İletişim kutusu stil ayarları */
+#contact-box {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+#contact-box h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#contact-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-box label {
+    margin: 10px 0 5px;
+}
+
+#contact-box input, #contact-box textarea {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+#contact-box button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-#language-selector button:hover {
-    background-color: #f2f2f2;
+#contact-box button:hover {
+    background-color: #45a049;
 }
-#language-selector {
-    font-size: 30px;
-}
+
         </style>
 
     </head>
     <body>
         <div id="cookie-popup">
+            <h2>Kurabiye alır mıydın? 🍪</h2>
             <p>Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.</p>
             <button id="cookie-button">Kabul Et</button>
             <button id="decline-button">Reddet</button>
@@ -440,7 +300,10 @@ header img {
                     <a href="#contact-box" id="contact-link">İletişim</a>
                 </nav>
             </div>  
+            <div id="baslik">
                 <h1 id="navigation-header">Speculo Hakkında</h1>
+            </div>
+                
 
             <div id="information">
                 <p id="information-text">Latince'de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.</p>
@@ -599,6 +462,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('#contact-box label[for="message"]').textContent = 'Message:'
             document.querySelector('#contact-box button[type="submit"]').textContent = 'Submit';
         }
+        setTimeout(() => {
+        document.body.classList.remove('fade-away');
+    }, 500);
     });
 });
         </script>
@@ -612,10 +478,30 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (language === 'en') {
             document.querySelector('#cookie-section p').textContent = 'This website uses cookies to ensure you get the best experience on our website. By continuing to browse the site, you are agreeing to our use of cookies.';
         }
+        setTimeout(() => {
+        document.body.classList.remove('fade-away');
+    }, 500);
     });
 });
 
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var languageSelector = document.getElementById('language');
+    languageSelector.addEventListener('change', function() {
+        var language = languageSelector.value;
+        if (language === 'tr') {
+            document.querySelector('#cookies-popup h2').textContent = 'Kurabiye alır mıydın? 🍪';
+        } else if (language === 'en') {
+            document.querySelector('#cookies-popup h2').textContent = 'Would you take a cookie? 🍪';
+        }
+        setTimeout(() => {
+            document.body.classList.remove('fade-away');
+        }, 500);
+    });
+});
+</script>
+
 <script>
 // Get the cookie pop-up, accept/decline buttons, and cookie banner
 const cookiePopup = document.getElementById('cookie-popup');
@@ -672,6 +558,9 @@ declineButton.addEventListener('click', () => {
             document.querySelector('#cookie-button').textContent = 'Accept';
             document.querySelector('#decline-button').textContent = 'Decline';
         }
+        setTimeout(() => {
+        document.body.classList.remove('fade-away');
+    }, 500);
     });
 });
 </script>
@@ -691,6 +580,9 @@ declineButton.addEventListener('click', () => {
             document.querySelector('#product-link').textContent = 'Our Product';
             document.querySelector('#contact-link').textContent = 'Contact Us';
         }
+        setTimeout(() => {
+        document.body.classList.remove('fade-away');
+    }, 500);
     });
 });
 </script>
@@ -704,6 +596,9 @@ declineButton.addEventListener('click', () => {
         } else if (language === 'en') {
             document.querySelector('#information-text').textContent = 'Specula, a Latin word for "mirror", is an intelligent clothing system that enables visually impaired individuals to engage in art without relying on others.';
         }
+        setTimeout(() => {
+        document.body.classList.remove('fade-away');
+    }, 500);
     });
 });
 </script>
@@ -719,6 +614,9 @@ declineButton.addEventListener('click', () => {
             document.querySelector('#amac-header').textContent = 'Our Mission';
             document.querySelector('#amac-text').textContent = 'Our mission is to help visually impaired individuals engage in physical and artistic activities without relying on others, as we have noticed that they are often deprived of these opportunities due to high rates of clinical depression, lack of attention to their non-essential needs, and the need for assistance during physical activities. To address this, we have developed an intelligent clothing system and a pressure-sensor-equipped board to enable visually impaired individuals to engage in physical and artistic activities independently.';
         }
+        setTimeout(() => {
+        document.body.classList.remove('fade-away');
+    }, 500);
     });
 });
 </script>
@@ -738,6 +636,9 @@ declineButton.addEventListener('click', () => {
             document.querySelector('#product-button').textContent = 'Buy Now';
             document.querySelector('#out-of-stock').textContent = 'Still in production';
         }
+        setTimeout(() => {
+        document.body.classList.remove('fade-away');
+    }, 500);
     });
 });
 </script>
