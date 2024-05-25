@@ -240,13 +240,21 @@ header img {
     background-color: rgba(255, 255, 255, 0.2);
 }
 #cookie-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-top-right-radius: 5px;
     transition: opacity 0.3s ease;
-    opacity: 1;
 }
 
 #cookie-popup.fade-away {
     opacity: 0;
 }
+
 #cookie-popup button {
     display: inline-block;
     margin-right: 10px;
@@ -294,6 +302,48 @@ header img {
     margin: 0 auto;
     margin-bottom: 20px;
 }
+#language-selector {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#language-selector select {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+#language-selector select::-ms-expand {
+    display: none;
+}
+
+#language-selector label {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#language-selector button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#language-selector button:hover {
+    background-color: #f2f2f2;
+}
         </style>
 
     </head>
@@ -310,19 +360,25 @@ header img {
                 <option value="en">English</option>
             </select>
         </div>
-        <div class="container">
-            <h1>Speculo Hakkında</h1>
-            <nav class="navbar">
-                <a href="https://goktug-yildiz.github.io/speculo/">Ana Sayfa</a>
-                <a href="#product-sale">Ürünümüz</a>
-                <a href="#contact-box">İletişim</a>
-            </nav>
+            <div class="container" id="navigation">
+                <h1 id="navigation-header">Speculo Hakkında</h1>
+                <nav class="navbar">
+                    <a href="https://goktug-yildiz.github.io/speculo/" id="home-link">Ana Sayfa</a>
+                    <a href="#amac" id="about-link">Yola Çıkış amacımız</a>
+                    <a href="#product-sale" id="product-link">Ürünümüz</a>
+                    <a href="#contact-box" id="contact-link">İletişim</a>
+                </nav>
+            </div>
             <div id="information">
-                <p>Latince'de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.</p>
+                <p id="information-text">Latince'de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.</p>
+            </div>
+            <div class="container" id="amac">
+                <h1 id="amac-header">Yola Çıkış Amacımız</h1>
+                <p id="amac-text">Bizim yola çıkış amacımız görme engellilerin yüksek oranda klinik depresyon yaşamaları, görme engelli bireylerin temel olmayan ihtiyaçlarının önemsenmemesi ve en önemlisi görme engelli bireylerin fiziksel aktivite yaparken başka birine muhtaç olmalarından dolayı biz bu yola çıktık. Bunları düşünerek biz görme engelli bireylerin en fazla sanat alanından mahrum kaldıklarını fark ettik bunun için biz bir akıllı kıyafet ve basınç sensörlü tahta ile görme engelli bireylerin fiziksel ve sanatsal aktivitelere birine muhtaç olmadan yapmalarına yardımcı oluyor.</p>
             </div>
             <div id="product-sale">
-                <h2>Satın alın!</h2>
-                <p>Our product is designed with engineering and biology students to</p>
+                <h2 id="product-header">Satın alın!</h2>
+                <p id="product-text">Our product is designed with engineering and biology students to</p>
                 <img src="https://cdn.discordapp.com/attachments/1243857945196761150/1243858204799139912/speculo.png?ex=665300b9&is=6651af39&hm=3152abd927235c3588351a4d009686650b73b674a1623dd8fa948f0c441d5fb2&" alt="Product Image" id="product-image">
                 <button id="product-button">Satın Al</button>
                 <p id="out-of-stock">Hala yapım aşamasında</p>
@@ -414,39 +470,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
             
-document.addEventListener('DOMContentLoaded', function() {
-    var languageSelector = document.getElementById('language');
-    languageSelector.addEventListener('change', function() {
-        var language = languageSelector.value;
-        if (language === 'tr') {
-            // Update the page content with Turkish text
-            document.querySelector('h1').textContent = 'Hakkında Specula';
-            document.querySelector('a[href="https://goktug-yildiz.github.io/specula/"]').textContent = 'Ana Sayfa';
-            document.querySelector('a[href="https://goktug-yildiz.github.io/specula-product/"]').textContent = 'Ürünümüz';
-            document.querySelector('a[href="#contact-box"]').textContent = 'İletişim';
-            document.querySelector('#information p').textContent = 'Latince`de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.';
-            // Update the contact box content with Turkish text
-            document.querySelector('#contact-box h2').textContent = 'Bizimle İletişime Geç';
-            document.querySelector('#contact-box label[for="name"]').textContent = 'İsim:';
-            document.querySelector('#contact-box label[for="email"]').textContent = 'Mail:';
-            document.querySelector('#contact-box label[for="message"]').textContent = 'Mesaj:';
-            document.querySelector('#contact-box button[type="submit"]').textContent = 'Gönder';
-        } else if (language === 'en') {
-            // Update the page content with English text
-            document.querySelector('h1').textContent = 'About Specula';
-            document.querySelector('a[href="https://goktug-yildiz.github.io/specula/"]').textContent = 'Home';
-            document.querySelector('a[href="https://goktug-yildiz.github.io/specula-product/"]').textContent = 'Product';
-            document.querySelector('a[href="#contact-box"]').textContent = 'Contact';
-            document.querySelector('#information p').textContent = '"Specula", which means mirror in Latin, is a smart clothing system that allows visually impaired individuals to engage in art without needing anyone else.';
-            // Update the contact box content with English text
-            document.querySelector('#contact-box h2').textContent = 'Contact Us';
-            document.querySelector('#contact-box label[for="name"]').textContent = 'Name:';
-            document.querySelector('#contact-box label[for="email"]').textContent = 'Email:';
-            document.querySelector('#contact-box label[for="message"]').textContent = 'Message:'
-            document.querySelector('#contact-box button[type="submit"]').textContent = 'Submit';
-        }
-    });
-});
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var form = document.querySelector('form');
@@ -517,4 +541,127 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-        </script>
+</script>
+<script>
+// Get the cookie pop-up, accept/decline buttons, and cookie banner
+const cookiePopup = document.getElementById('cookie-popup');
+const acceptButton = document.getElementById('accept-button');
+const declineButton = document.getElementById('decline-button');
+const cookieBanner = document.getElementById('cookie-banner');
+
+// Add a fade-in effect to the cookie pop-up when the page loads
+window.addEventListener('load', () => {
+  cookiePopup.style.opacity = 0;
+  setTimeout(() => {
+    cookiePopup.style.transition = 'opacity 0.5s';
+    cookiePopup.style.opacity = 1;
+  }, 500);
+});
+
+// Add a click event listener to the accept button
+acceptButton.addEventListener('click', () => {
+  // Fade out the cookie pop-up and banner
+  cookiePopup.style.opacity = 1;
+  cookieBanner.style.opacity = 1;
+  setTimeout(() => {
+    cookiePopup.style.transition = 'opacity 0.5s';
+    cookiePopup.style.opacity = 0;
+    cookieBanner.style.transition = 'opacity 0.5s';
+    cookieBanner.style.opacity = 0;
+  }, 500);
+});
+
+// Add a click event listener to the decline button
+declineButton.addEventListener('click', () => {
+  // Fade out the cookie pop-up and banner
+  cookiePopup.style.opacity = 1;
+  cookieBanner.style.opacity = 1;
+  setTimeout(() => {
+    cookiePopup.style.transition = 'opacity 0.5s';
+    cookiePopup.style.opacity = 0;
+    cookieBanner.style.transition = 'opacity 0.5s';
+    cookieBanner.style.opacity = 0;
+  }, 500);
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var languageSelector = document.getElementById('language');
+    languageSelector.addEventListener('change', function() {
+        var language = languageSelector.value;
+        if (language === 'tr') {
+            document.querySelector('#cookie-popup p').textContent = 'Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.';
+        } else if (language === 'en') {
+            document.querySelector('#cookie-popup p').textContent = 'This website uses cookies to ensure you get the best experience on our website. By continuing to browse the site, you are agreeing to our use of cookies.';
+        }
+    });
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var languageSelector = document.getElementById('language');
+    languageSelector.addEventListener('change', function() {
+        var language = languageSelector.value;
+        if (language === 'tr') {
+            document.querySelector('#navigation-header').textContent = 'Speculo Hakkında';
+            document.querySelector('#home-link').textContent = 'Ana Sayfa';
+            document.querySelector('#about-link').textContent = 'Yola Çıkış amacımız';
+            document.querySelector('#product-link').textContent = 'Ürünümüz';
+            document.querySelector('#contact-link').textContent = 'İletişim';
+        } else if (language === 'en') {
+            document.querySelector('#navigation-header').textContent = 'About Speculo';
+            document.querySelector('#home-link').textContent = 'Home';
+            document.querySelector('#about-link').textContent = 'Our Mission';
+            document.querySelector('#product-link').textContent = 'Our Product';
+            document.querySelector('#contact-link').textContent = 'Contact Us';
+        }
+    });
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var languageSelector = document.getElementById('language');
+    languageSelector.addEventListener('change', function() {
+        var language = languageSelector.value;
+        if (language === 'tr') {
+            document.querySelector('#information-text').textContent = 'Latince\'de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.';
+        } else if (language === 'en') {
+            document.querySelector('#information-text').textContent = 'Specula, a Latin word for "mirror", is an intelligent clothing system that enables visually impaired individuals to engage in art without relying on others.';
+        }
+    });
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var languageSelector = document.getElementById('language');
+    languageSelector.addEventListener('change', function() {
+        var language = languageSelector.value;
+        if (language === 'tr') {
+            document.querySelector('#amac-header').textContent = 'Yola Çıkış Amacımız';
+            document.querySelector('#amac-text').textContent = 'Bizim yola çıkış amacımız görme engellilerin yüksek oranda klinik depresyon yaşamaları, görme engelli bireylerin temel olmayan ihtiyaçlarının önemsenmemesi ve en önemlisi görme engelli bireylerin fiziksel aktivite yaparken başka birine muhtaç olmalarından dolayı biz bu yola çıktık. Bunları düşünerek biz görme engelli bireylerin en fazla sanat alanından mahrum kaldıklarını fark ettik bunun için biz bir akıllı kıyafet ve basınç sensörlü tahta ile görme engelli bireylerin fiziksel ve sanatsal aktivitelere birine muhtaç olmadan yapmalarına yardımcı oluyor.';
+        } else if (language === 'en') {
+            document.querySelector('#amac-header').textContent = 'Our Mission';
+            document.querySelector('#amac-text').textContent = 'Our mission is to help visually impaired individuals engage in physical and artistic activities without relying on others, as we have noticed that they are often deprived of these opportunities due to high rates of clinical depression, lack of attention to their non-essential needs, and the need for assistance during physical activities. To address this, we have developed an intelligent clothing system and a pressure-sensor-equipped board to enable visually impaired individuals to engage in physical and artistic activities independently.';
+        }
+    });
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var languageSelector = document.getElementById('language');
+    languageSelector.addEventListener('change', function() {
+        var language = languageSelector.value;
+        if (language === 'tr') {
+            document.querySelector('#product-header').textContent = 'Satın alın!';
+            document.querySelector('#product-text').textContent = 'Ürünümüz mühendislik ve biyoloji öğrencileriyle birlikte tasarlandı';
+            document.querySelector('#product-button').textContent = 'Satın Al';
+            document.querySelector('#out-of-stock').textContent = 'Hala yapım aşamasında';
+        } else if (language === 'en') {
+            document.querySelector('#product-header').textContent = 'Buy Now!';
+            document.querySelector('#product-text').textContent = 'Our product is designed with engineering and biology students to';
+            document.querySelector('#product-button').textContent = 'Buy Now';
+            document.querySelector('#out-of-stock').textContent = 'Still in production';
+        }
+    });
+});
+</script>
