@@ -4,7 +4,7 @@
         <img src="https://cdn.discordapp.com/attachments/1243857945196761150/1243986174545235968/speculo-tp.png?ex=665377e8&is=66522668&hm=1cdff7f7bdc44b5130343972ab8f4b35114d710239163a99e5c995d5ea215275&" alt="Logo">
     </header>
     <head>
-        <link rel="icon" href='https://cdn.discordapp.com/attachments/1243857945196761150/1243986173886468158/speculo-main.png?ex=665377e8&is=66522668&hm=b86f343343ec7a5f6e639b6071014a25456cafc5c3546f1ed1aca1e2d49bbdf5&' type="image/icon type">
+        <link rel="icon" href="https://cdn.discordapp.com/attachments/1243857945196761150/1243986173886468158/speculo-main.png?ex=665377e8&is=66522668&hm=b86f343343ec7a5f6e639b6071014a25456cafc5c3546f1ed1aca1e2d49bbdf5&" type="image/x-icon">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Main Page - Speculo</title>
@@ -219,11 +219,12 @@ header img {
 }
 
 #product-sale img {
-    width: auto; /* Orijinal boyutunu koru */
-    height: auto; /* Orijinal boyutunu koru */
-    margin: 20px 0;
-    border-radius: 5px;
+    max-width: 300px; /* Maksimum genişlik belirleme */
+    height: auto; /* Yükseklik otomatik olarak ayarlanacak */
+    margin: 20px auto; /* Dikey hizalama için */
+    display: block; /* Resmi blok olarak yerleştirme */
 }
+
 
 #product-sale button {
     padding: 10px 20px;
