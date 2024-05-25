@@ -161,7 +161,7 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 #contact-box {
-    margin-top: 50vh;
+    margin-top: 10vh;
 }
 html {
     scroll-behavior:smooth;
@@ -251,8 +251,98 @@ header img {
     display: inline-block;
     margin-right: 10px;
 }
+#product-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    font-size: 18px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#product-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+#product-image {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+#out-of-stock {
+    text-align: center;
+    color: red;
+    margin-top: 20px;
+}
+#product-button:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+#product-button:hover {
+    cursor: not-allowed;
+}
+#product-image {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
         </style>
-        <script>
+
+    </head>
+    <body>
+        <div id="cookie-popup">
+            <p>Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.</p>
+            <button id="cookie-button">Accept</button>
+            <button id="decline-button">Decline</button>
+        </div>
+        <div id="language-selector">
+            <label for="language">Language:</label>
+            <select id="language">
+                <option value="tr">Turkish</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <div class="container">
+            <h1>Speculo Hakkında</h1>
+            <nav class="navbar">
+                <a href="https://goktug-yildiz.github.io/specula/">Ana Sayfa</a>
+                <a href="https://goktug-yildiz.github.io/specula-product/">Ürünümüz</a>
+                <a href="#contact-box">İletişim</a>
+            </nav>
+            <div id="information">
+                <p>Latince'de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.</p>
+            </div>
+            <div id="product-sale">
+                <h2>Buy our product</h2>
+                <p>Our product is designed with engineering and biology students to</p>
+                <img src="https://cdn.discordapp.com/attachments/1243857945196761150/1243858204799139912/speculo.png?ex=665300b9&is=6651af39&hm=3152abd927235c3588351a4d009686650b73b674a1623dd8fa948f0c441d5fb2&" alt="Product Image" id="product-image">
+                <button id="product-button">Satın Al</button>
+                <p id="out-of-stock">Hala yapım aşamasında</p>
+            </div>
+            <div id="contact-box">
+                <h2>Bizimle İletişime Geç</h2>
+                <form action="https://formspree.io/your-email@example.com" method="POST">
+                    <label for="name">İsim:</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="email">Mail:</label>
+                    <input type="email" id="email" name="_replyto" required>
+            
+                    <label for="message">Mesaj:</label>
+                    <textarea id="message" name="message" required></textarea>
+            
+                    <button type="submit">Yolla</button>
+                </form>
+            </div>
+            <script>
             function json(url) {
             return fetch(url).then(res => res.json());
         }
@@ -335,7 +425,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('a[href="https://goktug-yildiz.github.io/specula-product/"]').textContent = 'Ürünümüz';
             document.querySelector('a[href="#contact-box"]').textContent = 'İletişim';
             document.querySelector('#information p').textContent = 'Latince`de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.';
-            document.querySelector('#cookie-section p').textContent = 'Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.';
             // Update the contact box content with Turkish text
             document.querySelector('#contact-box h2').textContent = 'Bizimle İletişime Geç';
             document.querySelector('#contact-box label[for="name"]').textContent = 'İsim:';
@@ -349,7 +438,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('a[href="https://goktug-yildiz.github.io/specula-product/"]').textContent = 'Product';
             document.querySelector('a[href="#contact-box"]').textContent = 'Contact';
             document.querySelector('#information p').textContent = '"Specula", which means mirror in Latin, is a smart clothing system that allows visually impaired individuals to engage in art without needing anyone else.';
-            document.querySelector('#cookie-section p').textContent = 'This website uses cookies to ensure you get the best experience on our website. By continuing to browse the site, you are agreeing to our use of cookies.';
             // Update the contact box content with English text
             document.querySelector('#contact-box h2').textContent = 'Contact Us';
             document.querySelector('#contact-box label[for="name"]').textContent = 'Name:';
@@ -394,43 +482,39 @@ document.addEventListener('DOMContentLoaded', function() {
           });
         });
         </script>
-    </head>
-    <body>
-        <div id="cookie-popup">
-            <p>Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.</p>
-            <button id="cookie-button">Accept</button>
-            <button id="decline-button">Decline</button>
-        </div>
-        <div id="language-selector">
-            <label for="language">Language:</label>
-            <select id="language">
-                <option value="tr">Turkish</option>
-                <option value="en">English</option>
-            </select>
-        </div>
-        <div class="container">
-            <h1>Speculo Hakkında</h1>
-            <nav class="navbar">
-                <a href="https://goktug-yildiz.github.io/specula/">Ana Sayfa</a>
-                <a href="https://goktug-yildiz.github.io/specula-product/">Ürünümüz</a>
-                <a href="#contact-box">İletişim</a>
-            </nav>
-            <div id="information">
-                <p>Latince'de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.</p>
-            </div>
-            
-            <div id="contact-box">
-                <h2>Bizimle İletişime Geç</h2>
-                <form action="https://formspree.io/your-email@example.com" method="POST">
-                    <label for="name">İsim:</label>
-                    <input type="text" id="name" name="name" required>
-            
-                    <label for="email">Mail:</label>
-                    <input type="email" id="email" name="_replyto" required>
-            
-                    <label for="message">Mesaj:</label>
-                    <textarea id="message" name="message" required></textarea>
-            
-                    <button type="submit">Yolla</button>
-                </form>
-            </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    var languageSelector = document.getElementById('language');
+    languageSelector.addEventListener('change', function() {
+        var language = languageSelector.value;
+        if (language === 'tr') {
+            // Update the page content with Turkish text
+            document.querySelector('#contact-box h2').textContent = 'Bizimle İletişime Geç';
+            document.querySelector('#contact-box label[for="name"]').textContent = 'İsim:';
+            document.querySelector('#contact-box label[for="email"]').textContent = 'Mail:';
+            document.querySelector('#contact-box label[for="message"]').textContent = 'Mesaj:';
+            document.querySelector('#contact-box button[type="submit"]').textContent = 'Gönder';
+        } else if (language === 'en') {
+            document.querySelector('#contact-box h2').textContent = 'Contact Us';
+            document.querySelector('#contact-box label[for="name"]').textContent = 'Name:';
+            document.querySelector('#contact-box label[for="email"]').textContent = 'Email:';
+            document.querySelector('#contact-box label[for="message"]').textContent = 'Message:'
+            document.querySelector('#contact-box button[type="submit"]').textContent = 'Submit';
+        }
+    });
+});
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    var languageSelector = document.getElementById('language');
+    languageSelector.addEventListener('change', function() {
+        var language = languageSelector.value;
+        if (language === 'tr') {
+            document.querySelector('#cookie-section p').textContent = 'Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.';
+        } else if (language === 'en') {
+            document.querySelector('#cookie-section p').textContent = 'This website uses cookies to ensure you get the best experience on our website. By continuing to browse the site, you are agreeing to our use of cookies.';
+        }
+    });
+});
+
+        </script>
