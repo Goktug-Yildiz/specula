@@ -331,10 +331,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (language === 'tr') {
             // Update the page content with Turkish text
             document.querySelector('h1').textContent = 'Hakkında Specula';
-            document.querySelector('p').textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.';
             document.querySelector('a[href="https://goktug-yildiz.github.io/specula/"]').textContent = 'Ana Sayfa';
             document.querySelector('a[href="https://goktug-yildiz.github.io/specula-product/"]').textContent = 'Ürünümüz';
             document.querySelector('a[href="#contact-box"]').textContent = 'İletişim';
+            document.querySelector('#information p').textContent = 'Latince`de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.';
+            document.querySelector('#cookie-section p').textContent = 'Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.';
             // Update the contact box content with Turkish text
             document.querySelector('#contact-box h2').textContent = 'Bizimle İletişime Geç';
             document.querySelector('#contact-box label[for="name"]').textContent = 'İsim:';
@@ -344,10 +345,11 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (language === 'en') {
             // Update the page content with English text
             document.querySelector('h1').textContent = 'About Specula';
-            document.querySelector('p').textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.';
             document.querySelector('a[href="https://goktug-yildiz.github.io/specula/"]').textContent = 'Home';
             document.querySelector('a[href="https://goktug-yildiz.github.io/specula-product/"]').textContent = 'Product';
             document.querySelector('a[href="#contact-box"]').textContent = 'Contact';
+            document.querySelector('#information p').textContent = '"Specula", which means mirror in Latin, is a smart clothing system that allows visually impaired individuals to engage in art without needing anyone else.';
+            document.querySelector('#cookie-section p').textContent = 'This website uses cookies to ensure you get the best experience on our website. By continuing to browse the site, you are agreeing to our use of cookies.';
             // Update the contact box content with English text
             document.querySelector('#contact-box h2').textContent = 'Contact Us';
             document.querySelector('#contact-box label[for="name"]').textContent = 'Name:';
@@ -395,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </head>
     <body>
         <div id="cookie-popup">
-            <p>This website uses cookies to ensure you get the best experience on our website. By continuing to browse the site, you are agreeing to our use of cookies.</p>
+            <p>Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.</p>
             <button id="cookie-button">Accept</button>
             <button id="decline-button">Decline</button>
         </div>
@@ -413,7 +415,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="https://goktug-yildiz.github.io/specula-product/">Ürünümüz</a>
                 <a href="#contact-box">İletişim</a>
             </nav>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+            <div id="information">
+                <p>Latince'de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.</p>
+            </div>
+            
             <div id="contact-box">
                 <h2>Bizimle İletişime Geç</h2>
                 <form action="https://formspree.io/your-email@example.com" method="POST">
