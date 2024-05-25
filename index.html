@@ -706,12 +706,12 @@ declineButton.addEventListener('click', () => {
         var language = languageSelector.value;
         if (language === 'tr') {
             document.querySelector('#product-header').textContent = 'Satın alın!';
-            document.querySelector('#product-text').textContent = 'Ürünümüz mühendislik ve biyoloji öğrencileriyle birlikte tasarlandı';
+            document.querySelector('#product-text').textContent = '';
             document.querySelector('#product-button').textContent = 'Satın Al';
             document.querySelector('#out-of-stock').textContent = 'Hala yapım aşamasında';
         } else if (language === 'en') {
             document.querySelector('#product-header').textContent = 'Buy Now!';
-            document.querySelector('#product-text').textContent = 'Our product is designed with engineering and biology students to';
+            document.querySelector('#product-text').textContent = '';
             document.querySelector('#product-button').textContent = 'Buy Now';
             document.querySelector('#out-of-stock').textContent = 'Still in production';
         }
