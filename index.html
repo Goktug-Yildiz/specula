@@ -1,18 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
     <header>
-        <img src="https://cdn.discordapp.com/attachments/1217132937242349740/1243459434710171648/speculo.png?ex=66518d57&is=66503bd7&hm=203e117d3bc643d89670e1b66f21833ac64fa7659cd2e7db0dbc3bee082fa0b9&" alt="Logo">
+        <img src="https://cdn.discordapp.com/attachments/1243857945196761150/1243858226567450644/speculo.png?ex=665300be&is=6651af3e&hm=cd3f8e1c161362e8a570a10a7bad8fd906eb9ab712e4162afe22725a6c7f64e7&" alt="Logo">
     </header>
     <head>
         <link rel="icon" href='https://imgur.com/a/3UOpW8P' type="image/icon type">
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Speculo</title>
         <style>
             /* Added CSS styles */
+            #product-sale {
+    background-image: linear-gradient(to bottom, #604799, #251855);
+    color: white;
+    padding: 2rem;
+}
+            header {
+    background-image: linear-gradient(to bottom, #604799, #251855);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+body {
+    background-image: linear-gradient(to bottom, #604799,#251855);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
             body {
                 background-color: rgb(0, 0, 128); /* A dark blue-purple background */
-                color: white; /* White text color */
+                color: white; /* White text color */    
                 font-family: Arial, sans-serif; /* Arial font with sans-serif fallback */
                 text-align: center; /* Center-aligned text */
                 line-height: 1.6; /* Improved line height */
@@ -398,6 +456,7 @@ header img {
                     <button type="submit">Yolla</button>
                 </form>
             </div>
+    </body>
             <script>
             function json(url) {
             return fetch(url).then(res => res.json());
