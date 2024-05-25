@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    background-color: #121212;
+    background-color: #2c3e50; /* Gri arkaplan rengi */
     color: #e0e0e0;
     line-height: 1.6;
     padding: 20px;
@@ -34,8 +34,8 @@ header {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #1f1f1f;
-    border-bottom: 1px solid #333;
+    background-color: #34495e; /* Koyu gri */
+    border-bottom: 1px solid #2c3e50; /* Gri kenarlık */
 }
 
 header img {
@@ -45,17 +45,24 @@ header img {
 
 /* Çerez popup stil ayarları */
 #cookie-popup {
-    background-color: #333;
+    background-color: #4f6273; /* Daha açık gri */
     padding: 20px;
     border-radius: 5px;
     position: fixed;
     bottom: 20px;
     left: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    max-width: 300px; /* Genişlik sınırı ekleme */
+    max-width: 300px;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
+#cookie-popup.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Buton stil ayarları */
 #cookie-popup h2 {
     font-size: 1.2rem;
     margin-bottom: 10px;
@@ -75,21 +82,21 @@ header img {
 }
 
 #cookie-button {
-    background-color: #4caf50;
+    background-color: #2ecc71; /* Yeşil */
     color: #fff;
 }
 
 #cookie-button:hover {
-    background-color: #45a049;
+    background-color: #27ae60; /* Koyu yeşil */
 }
 
 #decline-button {
-    background-color: #f44336;
+    background-color: #e74c3c; /* Kırmızı */
     color: #fff;
 }
 
 #decline-button:hover {
-    background-color: #e53935;
+    background-color: #c0392b; /* Koyu kırmızı */
 }
 
 /* Dil seçici stil ayarları - Alternatif 1 */
@@ -134,7 +141,7 @@ header img {
 .navbar {
     display: flex;
     justify-content: center;
-    background-color: #1f1f1f;
+    background-color: #34495e; /* Koyu gri */
     padding: 15px;
     margin-top: 20px;
     border-radius: 5px;
@@ -149,7 +156,7 @@ header img {
 }
 
 .navbar a:hover {
-    background-color: #333;
+    background-color: #2c3e50; /* Daha koyu gri */
     color: #fff;
 }
 
@@ -166,10 +173,10 @@ header img {
 
 /* Bilgi bölümü stil ayarları */
 #information {
-    background-color: #1f1f1f;
+    background-color: #34495e; /* Koyu gri */
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
 }
 
@@ -179,10 +186,10 @@ header img {
 
 /* Amacımız bölümü stil ayarları */
 #amac {
-    background-color: #1f1f1f;
+    background-color: #34495e; /* Koyu gri */
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
 }
 
@@ -197,10 +204,10 @@ header img {
 
 /* Ürün satış bölümü stil ayarları */
 #product-sale {
-    background-color: #1f1f1f;
+    background-color: #34495e; /* Koyu gri */
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -208,80 +215,80 @@ header img {
 #product-sale h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 #product-sale img {
-    max-width: 100%;
-    height: auto;
+    width: auto; /* Orijinal boyutunu koru */
+    height: auto; /* Orijinal boyutunu koru */
     margin: 20px 0;
     border-radius: 5px;
 }
 
-#product-button {
-    background-color: #007bff;
-    color: #fff;
+#product-sale button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    cursor: not-allowed;
-    margin: 20px 0;
-    transition: background-color 0.3s ease;
-    pointer-events: none;
-}
-
-#product-button:hover {
-    background-color: #007bff; /* Hover durumunda renk değişmeyecek */
-}
-
-#out-of-stock {
-    color: #ff5722;
-    font-weight: bold;
-}
-
-/* İletişim kutusu stil ayarları */
-#contact-box {
-    background-color: #1f1f1f;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin-bottom: 20px;
-}
-
-#contact-box h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-#contact-box form {
-    display: flex;
-    flex-direction: column;
-}
-
-#contact-box label {
-    margin: 10px 0 5px;
-}
-
-#contact-box input, #contact-box textarea {
-    padding: 10px;
-    border: 1px solid #444;
-    border-radius: 5px;
-    background-color: #2b2b2b;
-    color: #e0e0e0;
-    margin-bottom: 20px;
-}
-
-#contact-box button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4caf50;
+    background-color: #2ecc71; /* Yeşil */
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-#contact-box button:hover {
-    background-color: #45a049;
+#product-sale button:hover {
+    background-color: #27ae60; /* Koyu yeşil */
+}
+
+#out-of-stock {
+    color: #e74c3c; /* Kırmızı */
+    font-weight: bold;
+}
+/* İletişim bölümü stil ayarları */
+#contact-box {
+    background-color: #34495e; /* Koyu gri */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+#contact-box h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#contact-box form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+#contact-box label {
+    color: #fff;
+}
+
+#contact-box input[type="text"],
+#contact-box input[type="email"],
+#contact-box textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+#contact-box input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2ecc71; /* Yeşil */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-box input[type="submit"]:hover {
+    background-color: #27ae60; /* Koyu yeşil */
 }
 
         </style>
@@ -324,7 +331,7 @@ header img {
             <div id="product-sale">
                 <h2 id="product-header">Satın alın!</h2>
                 <p id="product-text">Our product is designed with engineering and biology students to</p>
-                <img src="https://cdn.discordapp.com/attachments/1243857945196761150/1243858204799139912/speculo.png?ex=665300b9&is=6651af39&hm=3152abd927235c3588351a4d009686650b73b674a1623dd8fa948f0c441d5fb2&" alt="Product Image" id="product-image">
+                <img src="https://cdn.discordapp.com/attachments/1243857945196761150/1243986174545235968/speculo-tp.png?ex=665377e8&is=66522668&hm=1cdff7f7bdc44b5130343972ab8f4b35114d710239163a99e5c995d5ea215275&" alt="Product Image" id="product-image">
                 <button id="product-button">Satın Al</button>
                 <p id="out-of-stock">Hala yapım aşamasında</p>
             </div>
@@ -340,7 +347,7 @@ header img {
                     <label for="message">Mesaj:</label>
                     <textarea id="message" name="message" required></textarea>
             
-                    <button type="submit">Yolla</button>
+                    <button type="submit">Gönder</button>
                 </form>
             </div>
     </body>
@@ -517,6 +524,7 @@ const cookiePopup = document.getElementById('cookie-popup');
 const acceptButton = document.getElementById('accept-button');
 const declineButton = document.getElementById('decline-button');
 const cookieBanner = document.getElementById('cookie-banner');
+const cookieHeader = document.querySelector("#cookie-popup h2");
 
 // Add a fade-in effect to the cookie pop-up when the page loads
 window.addEventListener('load', () => {
@@ -562,10 +570,12 @@ declineButton.addEventListener('click', () => {
             document.querySelector('#cookie-popup p').textContent = 'Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.';
             document.querySelector('#cookie-button').textContent = 'Kabul Et';
             document.querySelector('#decline-button').textContent = 'Reddet';
+            cookieHeader.textContent = "Kurabiye alır mısın? 🍪";
         } else if (language === 'en') {
             document.querySelector('#cookie-popup p').textContent = 'This website uses cookies to ensure you get the best experience on our website. By continuing to browse the site, you are agreeing to our use of cookies.';
             document.querySelector('#cookie-button').textContent = 'Accept';
             document.querySelector('#decline-button').textContent = 'Decline';
+            cookieHeader.textContent = "Would you like cookies? 🍪";
         }
         setTimeout(() => {
         document.body.classList.remove('fade-away');
