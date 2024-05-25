@@ -7,7 +7,7 @@
         <link rel="icon" href='https://imgur.com/a/3UOpW8P' type="image/icon type">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Speculo</title>
+        <title>Main Page - Speculo</title>
         <style>
             /* Added CSS styles */
             .navbar a {
@@ -377,12 +377,19 @@ header img {
     margin-top: 20px;
 }
 
+#language-selector label {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 #language-selector select {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 5px;
-    font-size: 16px;
+    font-size: 20px;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -393,19 +400,12 @@ header img {
     display: none;
 }
 
-#language-selector label {
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
 #language-selector button {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 5px 10px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -413,14 +413,17 @@ header img {
 #language-selector button:hover {
     background-color: #f2f2f2;
 }
+#language-selector {
+    font-size: 30px;
+}
         </style>
 
     </head>
     <body>
         <div id="cookie-popup">
             <p>Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.</p>
-            <button id="cookie-button">Accept</button>
-            <button id="decline-button">Decline</button>
+            <button id="cookie-button">Kabul Et</button>
+            <button id="decline-button">Reddet</button>
         </div>
         <div id="language-selector">
             <label for="language">Language:</label>
@@ -429,15 +432,16 @@ header img {
                 <option value="en">English</option>
             </select>
         </div>
-            <div class="container" id="navigation">
-                <h1 id="navigation-header">Speculo Hakkında</h1>
+            
+            <div class="container" id="navigation">   
                 <nav class="navbar">
-                    <a href="https://goktug-yildiz.github.io/speculo/" id="home-link">Ana Sayfa</a>
                     <a href="#amac" id="about-link">Yola Çıkış amacımız</a>
                     <a href="#product-sale" id="product-link">Ürünümüz</a>
                     <a href="#contact-box" id="contact-link">İletişim</a>
                 </nav>
-            </div>
+            </div>  
+                <h1 id="navigation-header">Speculo Hakkında</h1>
+
             <div id="information">
                 <p id="information-text">Latince'de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.</p>
             </div>
@@ -661,8 +665,12 @@ declineButton.addEventListener('click', () => {
         var language = languageSelector.value;
         if (language === 'tr') {
             document.querySelector('#cookie-popup p').textContent = 'Bu web sitesi, en iyi deneyimi sağlamak için çerezleri kullanır. Siteye göz atarken, çerezleri kullanımını kabul ediyorsunuz.';
+            document.querySelector('#cookie-button').textContent = 'Kabul Et';
+            document.querySelector('#decline-button').textContent = 'Reddet';
         } else if (language === 'en') {
             document.querySelector('#cookie-popup p').textContent = 'This website uses cookies to ensure you get the best experience on our website. By continuing to browse the site, you are agreeing to our use of cookies.';
+            document.querySelector('#cookie-button').textContent = 'Accept';
+            document.querySelector('#decline-button').textContent = 'Decline';
         }
     });
 });
