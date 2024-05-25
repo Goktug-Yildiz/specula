@@ -305,10 +305,38 @@ header img {
 #contact-box input[type="submit"]:hover {
     background-color: #27ae60; /* Koyu yeşil */
 }
-.instagram-link img {
-    width: 25px; /* İstediğiniz boyuta göre ayarlayabilirsiniz */
+footer {
+    background-color: #34495e; /* Koyu gri */
+    padding: 20px;
+    border-radius: 5px; /* Kenar yuvarlaklığı ekleme */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+    color: #fff;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+}
+
+.social-links a {
+    margin-left: 10px; /* İkonlar arasında boşluk bırakmak için */
+}
+
+.instagram-link img,
+.x-link img {
+    width: 30px; /* İstediğiniz boyuta göre ayarlayabilirsiniz */
     height: auto;
 }
+
         </style>
 
     </head>
@@ -332,9 +360,6 @@ header img {
                     <a href="#amac" id="about-link">Yola Çıkış amacımız</a>
                     <a href="#product-sale" id="product-link">Ürünümüz</a>
                     <a href="#contact-box" id="contact-link">İletişim</a>
-                    <a href="https://www.instagram.com/speculo.tr?igsh=OW1rMXJxbTV5NGYw" class="instagram-link">
-                        <img src="https://cdn.discordapp.com/attachments/1243857945196761150/1244014848883298415/download-removebg-preview.png?ex=6653929c&is=6652411c&hm=93cc2df22c68eb3ac8ffc503eb0e7aed928498901f918c44490654ef925be9a8&" alt="Instagram Logo">
-                    </a>
                 </nav>
             </div>  
             <div id="baslik">
@@ -343,7 +368,7 @@ header img {
                 
 
             <div id="information">
-                <p id="information-text">Latince'de ayna anlamına gelen "Speculo", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.</p>
+                <p id="information-text">Latince'de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.</p>
             </div>
             <div class="container" id="amac">
                 <h1 id="amac-header">Yola Çıkış Amacımız</h1>
@@ -371,6 +396,20 @@ header img {
                     <button type="submit">Gönder</button>
                 </form>
             </div>
+            <footer>
+                <div class="footer-content">
+                    <p>Tüm hakları saklıdır &copy; 2024</p>
+                    <div class="social-links">
+                    <a href="https://www.instagram.com/speculo.tr?igsh=OW1rMXJxbTV5NGYw" class="instagram-link">
+                        <img src="https://cdn.discordapp.com/attachments/1243857945196761150/1244014848883298415/download-removebg-preview.png?ex=6653929c&is=6652411c&hm=93cc2df22c68eb3ac8ffc503eb0e7aed928498901f918c44490654ef925be9a8&" alt="Instagram Logo">
+                    </a>
+                    <a href="https://x.com/SpeculoTr" class="x-link">
+                        <img src="https://cdn.discordapp.com/attachments/1243857945196761150/1244018901491257384/download__1_-removebg-preview.png?ex=66539662&is=665244e2&hm=f5edca12f9115a9cabbb513ac781f235b2636d471185fe3aea74167acdbfc5c1&" alt="Twitter Logo">
+                    </a>
+                    </div>
+                </div>
+            </footer>
+            
     </body>
             <script>
             function json(url) {
@@ -632,9 +671,9 @@ declineButton.addEventListener('click', () => {
     languageSelector.addEventListener('change', function() {
         var language = languageSelector.value;
         if (language === 'tr') {
-            document.querySelector('#information-text').textContent = 'Latince\'de ayna anlamına gelen "Speculo", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.';
+            document.querySelector('#information-text').textContent = 'Latince\'de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.';
         } else if (language === 'en') {
-            document.querySelector('#information-text').textContent = 'Speculo, a Latin word for "mirror", is an intelligent clothing system that enables visually impaired individuals to engage in art without relying on others.';
+            document.querySelector('#information-text').textContent = 'Specula, a Latin word for "mirror", is an intelligent clothing system that enables visually impaired individuals to engage in art without relying on others.';
         }
         setTimeout(() => {
         document.body.classList.remove('fade-away');
