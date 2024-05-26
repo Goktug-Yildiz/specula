@@ -2,6 +2,7 @@
 <html lang="en">
     <header>
         <img src="https://cdn.discordapp.com/attachments/1243857945196761150/1243986174545235968/speculo-tp.png?ex=665377e8&is=66522668&hm=1cdff7f7bdc44b5130343972ab8f4b35114d710239163a99e5c995d5ea215275&" alt="Logo">
+        <h2 id="slogan">Ritim, gözlerden değil kalpten doğar!</h2>
     </header>
     <head>
         <link rel="icon" href="https://cdn.discordapp.com/attachments/1243857945196761150/1243986173886468158/speculo-main.png?ex=665377e8&is=66522668&hm=b86f343343ec7a5f6e639b6071014a25456cafc5c3546f1ed1aca1e2d49bbdf5&" type="image/x-icon">
@@ -10,6 +11,20 @@
         <title>Ana Sayfa - Speculo</title>
         <style>
 /* Genel stil ayarları */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #34495e; /* Koyu gri */
+    border-bottom: 1px solid #2c3e50; /* Gri kenarlık */
+}
+
+#slogan {
+    margin-top: 20px;
+    text-align: center;
+    color:#282828
+}
 * {
     margin: 0;
     padding: 0;
@@ -357,6 +372,10 @@ footer {
 #solve-header {
     font-size: 2rem; /* Örneğin, 2.5rem değerini kullanabilirsiniz */
 }
+#problem {
+    font-size: 2.5rem; /* Örneğin, 2.5rem değerini kullanabilirsiniz */
+    text-align: center;
+}
         </style>
 
     </head>
@@ -377,7 +396,7 @@ footer {
             
             <div class="container" id="navigation">   
                 <nav class="navbar">
-                    <a href="#amac" id="about-link">Yola Çıkış amacımız</a>
+                    <a href="#problem" id="about-link">Problem ve Çözüm</a>
                     <a href="#product-sale" id="product-link">Ürünümüz</a>
                     <a href="#contact-box" id="contact-link">İletişim</a>
                 </nav>
@@ -389,6 +408,9 @@ footer {
 
             <div id="information">
                 <p id="information-text">Latince'de ayna anlamına gelen "Specula", görme engelli bireylerin başka birine muhtaç kalmadan sanatla uğraşmalarına olanak sağlayan akıllı bir kiyafet sistemidir.</p>
+            </div>
+            <div>
+                <h1 id="problem">Problem ve Çözüm</h1>
             </div>
             <div class="container" id="amac">
                 <h1 id="amac-header">Yola Çıkış Amacımız</h1>
@@ -753,12 +775,16 @@ declineButton.addEventListener('click', () => {
         if (language === 'tr') {
             // Update the page content with Turkish text
             document.querySelector('#footer-text').textContent = 'Tüm hakları saklıdır © 2024';
-            document.querySelector('#solve-header').textContent = 'Çözümümüz'
-            document.querySelector('#solve-text').textContent = 'Görme engelli bireyler "Speculo" ekibinin geliştirdiği akıllı ceket ve dans platformu sayesinde kimseye muhtaç olmadan istedikleri her yerde dans edebilecek, kendilerine yeni bir aktivite kazandırabilecekler. speculo\'nun asıl amacı bu aktiviteyi kazandırmak, kazandırırken sosyal farkındalığı yükseltmek ve bu sektörü ilerletmek.'
+            document.querySelector('#solve-header').textContent = 'Çözümümüz';
+            document.querySelector('#solve-text').textContent = 'Görme engelli bireyler "Speculo" ekibinin geliştirdiği akıllı ceket ve dans platformu sayesinde kimseye muhtaç olmadan istedikleri her yerde dans edebilecek, kendilerine yeni bir aktivite kazandırabilecekler. speculo\'nun asıl amacı bu aktiviteyi kazandırmak, kazandırırken sosyal farkındalığı yükseltmek ve bu sektörü ilerletmek.';
+            document.querySelector('#slogan').textContent = 'Ritim, gözlerden değil kalpten doğar!';
+            document.querySelector('#problem').textContent = 'Problem ve Çözüm'
         } else if (language === 'en') {
-            document.querySelector('#footer-text').textContent = 'All rights reserved © 2024'
-            document.querySelector('#solve-header').textContent = 'Our Solution'
-            document.querySelector('#solve-text').textContent = 'Visually impaired individuals will be able to dance anywhere they want without needing anyone thanks to the smart jacket and dance platform developed by the "Speculo" team, and they will be able to get a new activity for themselves. the main purpose of speculo is to gain this activity, to raise social awareness while earning and to advance this sector.'
+            document.querySelector('#footer-text').textContent = 'All rights reserved © 2024';
+            document.querySelector('#solve-header').textContent = 'Our Solution';
+            document.querySelector('#solve-text').textContent = 'Visually impaired individuals will be able to dance anywhere they want without needing anyone thanks to the smart jacket and dance platform developed by the "Speculo" team, and they will be able to get a new activity for themselves. the main purpose of speculo is to gain this activity, to raise social awareness while earning and to advance this sector.';
+            document.querySelector('#slogan').textContent = 'Rhythm is born from the heart, not from the eyes!';
+            document.querySelector('#problem').textContent = 'Problem and Solution'
         }
         setTimeout(() => {
         document.body.classList.remove('fade-away');
