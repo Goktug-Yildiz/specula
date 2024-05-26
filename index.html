@@ -69,7 +69,7 @@ header img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     max-width: 300px;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transition: opacity 2s ease, visibility 2s ease;
 }
 
 #cookie-popup.hidden {
@@ -792,3 +792,36 @@ declineButton.addEventListener('click', () => {
     });
 });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const cookiePopup = document.getElementById('cookie-popup');
+    const cookieButton = document.getElementById('cookie-button');
+    const declineButton = document.getElementById('decline-button');
+
+    cookieButton.addEventListener('click', function() {
+        acceptCookies();
+    });
+
+    declineButton.addEventListener('click', function() {
+        declineCookies();
+    });
+
+    function acceptCookies() {
+        // Logic to accept cookies
+        hideCookiePopup();
+    }
+
+    function declineCookies() {
+        // Logic to decline cookies
+        hideCookiePopup();
+    }
+
+    function hideCookiePopup() {
+        cookiePopup.classList.add('hidden');
+        setTimeout(() => {
+            cookiePopup.style.display = 'none';
+        }, 2000); // 2 seconds
+    }
+});
+
+</script>S
